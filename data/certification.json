@@ -1,0 +1,55 @@
+{
+    "certifications":[
+        {
+          "certificationName": "Intermediate SQL Queries",
+          "certificationLink":"https://www.datacamp.com/statement-of-accomplishment/course/5c25d131771fab490aa41da665c898bb42910f4d?raw=1",
+          "issued" : "November 2023",
+          "credentialId": "5c25d131771fab490aa41da665c898bb42910f4d", 
+          "issuedBy": "DataCamp"
+        },
+        {
+          "certificationName": "Joining Data in SQL",
+          "certificationLink": "https://www.datacamp.com/statement-of-accomplishment/course/5c25d131771fab490aa41da665c898bb42910f4d?raw=1",
+          "issued" : "November 2023",
+          "credentialId": "3cfafc4aa3be213a0b52dde6cb7272ae418993e5",
+          "issuedBy": "DataCamp"
+        },
+        {
+          "certificationName": "Modern React with Redux",
+          "certificationLink": "https://www.udemy.com/certificate/UC-7a607fa6-b35f-41c9-babf-f2ef1ca4e57a/",
+          "issued" : "July 2023",
+          "credentialId": "UC-7a607fa6-b35f-41c9-babf-f2ef1ca4e57a",
+          "issuedBy": "Udemy"
+        },
+        {
+          "certificationName": "MongoDB Node.js Developer Path ",
+          "certificationLink": "https://learn.mongodb.com/c/ajxrqazNRW6V5TSlHKRh3A",
+          "issued" : "February 2023",
+          "credentialId": "MDBzs8kf2hwh8",
+          "issuedBy": "MongoDB"
+        },
+       
+        {
+          "certificationName": "Namaste React Live Course",
+          "certificationLink": "https://learn.namastedev.com/share-certificate?serialno=NZ2FAOCC",
+          "issued" : "February 2023",
+          "credentialId": "NZ2FAOCC",
+          "issuedBy": "NamasteDev.com"
+        },
+        {
+          "certificationName": "JavaScript Algorithms and Data Structures",
+          "certificationLink": "https://freecodecamp.org/certification/fccc7942640-e76d-4d5a-81c7-179c91b532fe/javascript-algorithms-and-data-structures",
+          "issued" : "December 2021",
+          "credentialId": "fccc7942640-e76d-4d5a-81c7-179c91b532fe",
+          "issuedBy": "FreeCodeCamp"
+        },
+        {
+          "certificationName": "Responsive Web Design",
+          "certificationLink": "https://freecodecamp.org/certification/fccc7942640-e76d-4d5a-81c7-179c91b532fe/responsive-web-design",
+          "issued" : "June 2021",
+          "credentialId": "fccc7942640-e76d-4d5a-81c7-179c91b532fe",
+          "issuedBy": "FreeCodeCamp"
+        }
+
+    ]
+}

@@ -1,0 +1,61 @@
+{
+    "blogs": [
+      {
+        "title": "Understanding Race Conditions and Synchronization in Concurrent Programming",
+        "publishedAt": "Medium",
+        "url": "https://medium.com/@imran.kuet14/understanding-race-conditions-and-synchronization-in-concurrent-programming-75eea2c8113c"
+      },
+      {
+        "title": "Call vs Apply vs Bind",
+        "publishedAt": "Medium",
+        "url": "https://medium.com/@mdimran_52695/call-vs-apply-vs-bind-6d563efc09d3"
+      },
+      {
+        "title": "Optimize-search-functionality-with-debouncing-and-caching",
+        "publishedAt": "Medium",
+        "url": "https://medium.com/@mdimran_52695/optimize-search-funtionality-with-debouncing-and-caching-f2df1e7a6fb9"
+      }, 
+      {
+        "title": "Asynchronous Javascript and Some advanced use cases",
+        "publishedAt": "Dev.to",
+        "url": "https://dev.to/mdimran1409036/asynchronous-javascript-and-some-advanced-use-cases-2357"
+      },
+      {
+        "title": "useEffect = comoponentDidMount + ComponentDidUpdate + componentWillUnmount",
+        "publishedAt": "Dev.to",
+        "url": "https://dev.to/mdimran1409036/useeffect-comoponentdidmount-componentdidupdate-componentwillunmount-4g5p"
+      },
+      {
+        "title": "binding 'this' ",
+        "publishedAt": "Dev.to",
+        "url": "https://dev.to/mdimran1409036/binding-this-3db4"
+      },
+      {
+        "title": "This keyword in Javascript",
+        "publishedAt": "Dev.to",
+        "url": "https://dev.to/mdimran1409036/this-keyword-in-javascript-3039"
+      },
+      {
+        "title": "CRUD operation with Expressjs and MongoDB",
+        "publishedAt": "Dev.to",
+        "url": "https://dev.to/mdimran1409036/crud-operation-with-expressjs-and-mongodb-4ni7"
+      },
+      {
+        "title": "Context API: Why and How",
+        "publishedAt": "Dev.to",
+        "url": "https://dev.to/mdimran1409036/context-api-why-and-how-lph"
+      },
+      {
+        "title": "Diving into array methods and loops",
+        "publishedAt": "Dev.to",
+        "url": "https://dev.to/mdimran1409036/diving-into-array-methods-and-loops-3l9f"
+      },
+      {
+        "title": "Understanding CSS Flexbox",
+        "publishedAt": "Dev.to",
+        "url": "https://dev.to/mdimran1409036/understanding-css-flex-box-52he"
+      }
+      
+
+    ]
+}
