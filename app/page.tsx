@@ -7,6 +7,7 @@ import Education from '../components/Education'
 import Footer from '../components/Footer'
 import Layout from '@/components/Layout'
 import Certifications from '@/components/Certifications'
+import RecommendationSection from '@/components/RecommendationSection'
 
 export default function Home() {
   return (
@@ -17,7 +18,6 @@ export default function Home() {
       <Education />
       <Certifications/>
       <References />
-      <Footer />
     </Layout>
   )
 }

@@ -30,6 +30,8 @@ export default function Header() {
           <Link href="/#education" className="text-gray-600 hover:text-blue-600 dark:text-gray-100">Education</Link>
           <Link href="/#certification" className="text-gray-600 hover:text-blue-600 dark:text-gray-100">Certification</Link>
           <Link  href={'/blog'} className="text-gray-600 hover:text-blue-600 dark:text-gray-100">Blog</Link>
+          <Link  href={'/recommendation'} className="text-gray-600 hover:text-blue-600 dark:text-gray-100">Recommendations</Link>
+          <Link  href={'/contact'} className="text-gray-600 hover:text-blue-600 dark:text-gray-100">Contact</Link>
         </motion.nav>
         <ThemeToggle></ThemeToggle>
       </div>

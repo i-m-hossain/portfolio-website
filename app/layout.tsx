@@ -26,8 +26,8 @@ export default function RootLayout({
 }>) {
   
   return (
-    <html lang="en" className="bg-white dark:bg-gray-900">
-       <body className="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+    <html lang="en" className="bg-white">
+       <body className="bg-white text-gray-900">
         <ThemeProvider>
           {children}
         </ThemeProvider>
