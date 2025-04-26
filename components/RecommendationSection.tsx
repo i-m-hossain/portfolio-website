@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import data from "@/data/recommendations.json"
+import { Recommendation } from '@/types/notion';
 const limit=600
 const cardVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -66,7 +67,7 @@ const cardVariants = {
     );
   };
   
-  const RecommendationSection = () => {
+  const RecommendationSection = ({recommendations}: {recommendations: Recommendation[]}) => {
     return (
       <section className="bg-white dark:bg-gray-900 py-12 px-4 md:px-8" id="recommendations">
         <div className="max-w-6xl mx-auto">
@@ -81,7 +82,7 @@ const cardVariants = {
           </motion.h2>
   
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 auto-rows-fr">
-            {data.map((rec, index) => (
+            {recommendations.map((rec, index) => (
               <RecommendationCard key={index} rec={rec} index={index} />
             ))}
           </div>

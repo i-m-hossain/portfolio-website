@@ -1,20 +1,21 @@
-export interface NotionResponse {
-    object: string;
-    results: NotionPage[];
-    next_cursor: string | null;
-    has_more: boolean;
+export interface Blog {
+    title: string
+    publishedAt: string
+    url: string
+}
+export interface Recommendation {
+    "firstName": string,
+    "lastName": string,
+    "jobTitle": string,
+    "company": string,
+    "status": string,
+    "creationDate": string
 }
 
-export interface NotionPage {
-    object: "page";
-    id: string;
-    created_time: string;
-    last_edited_time: string;
-    properties: {
-      [key: string]: {
-        id: string;
-        type: string;
-        [key: string]: any;
-      };
-    };
-  }
+export interface Certification {
+    "certificationName": string,
+    "certificationLink": string,
+    "issued": string,
+    "credentialId": string,
+    "issuedBy": string
+}

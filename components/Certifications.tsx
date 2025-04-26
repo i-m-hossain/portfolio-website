@@ -1,7 +1,7 @@
 'use client'
 import CertificationCard from './CertificationCard'
-import data from "../data/certification.json"
 import { motion } from 'framer-motion'
+import { Certification } from '@/types/notion';
 
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -16,10 +16,10 @@ const cardVariants = {
   })
 };
 
-export default function Certifications() {
+export default async function Certifications({certifications}: {certifications: Certification[]}) {
   return (
-    <section 
-      className="py-8 shadow-md border-b-gray-300 dark:shadow-[0_4px_6px_1px_rgba(255,255,255,0.8)] transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100" 
+    <section
+      className="py-8 shadow-md border-b-gray-300 dark:shadow-[0_4px_6px_1px_rgba(255,255,255,0.8)] transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100"
       id="certification"
     >
       <div className="max-w-6xl mx-auto p-6">
@@ -34,7 +34,7 @@ export default function Certifications() {
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
-          {data.certifications.map((certification, index) => (
+          {certifications.map((certification, index) => (
             <motion.div
               key={index}
               className="flex flex-col justify-between bg-white dark:bg-gray-800 p-4 rounded-md shadow-sm hover:shadow-md transition"

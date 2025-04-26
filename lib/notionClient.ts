@@ -21,7 +21,7 @@ export const fetchFromNotion = async (
       ...params,
     });
 
-    return response.results;
+    return response.results ;
   } catch (error: any) {
     console.error("Notion fetch error:", error.message || error);
     throw error;
