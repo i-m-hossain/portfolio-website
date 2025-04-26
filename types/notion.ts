@@ -19,3 +19,9 @@ export interface Certification {
     "credentialId": string,
     "issuedBy": string
 }
+
+export interface Education{
+    "degree": string,
+    "institution": string,
+    "duration": string
+}
