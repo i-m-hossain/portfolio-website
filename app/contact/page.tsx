@@ -4,7 +4,8 @@ import Layout from '@/components/Layout'
 export default function HomePage() {
   return (
     <Layout>
-      <ConnectMe />
+      {/* <ConnectMe /> */}
+      <p>hello</p>
     </Layout>
   )
 }

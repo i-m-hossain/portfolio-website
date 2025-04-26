@@ -1,7 +1,7 @@
-{
-    "education": {
-      "degree": "BSc in Electronics and Communication Engineering",
-      "institution": "Khulna University of Engineering & Technology, Khulna",
-      "duration": "Apr 2015 – Jul 2019"
-    }
-}
+[
+  {
+    "degree": "BSc in Electronics and Communication Engineering",
+    "institution": "Khulna University of Engineering & Technology, Khulna",
+    "duration": "Apr 2015 – Jul 2019"
+  }
+]

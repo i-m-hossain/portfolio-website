@@ -8,7 +8,8 @@ import RecommendationSection from "@/components/RecommendationSection"
 export default function BlogPage() {
   return (
     <Layout>
-      <RecommendationSection />
+      {/* <RecommendationSection /> */}
+      <p>hello</p>
     </Layout>
   )
 }
