@@ -3,13 +3,17 @@
 import { motion } from 'framer-motion'
 import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa'
 import Link from 'next/link'
-import data from '@/data/personalInfo.json'
+import { PersonalInfo } from '@/types/notion'
+import { siteConfig } from '@/config/siteConfig'
 
-export default function ConnectMe() {
+
+export default function ConnectMe({personalInfo}: {personalInfo: PersonalInfo}) {
+
+
   return (
     <section
       id="connect"
-      className="bg-white dark:bg-gray-900 py-12 px-6 transition-colors duration-300 shadow-md dark:shadow-[0_4px_6px_1px_rgba(255,255,255,0.8)]"
+      className="bg-white dark:bg-gray-900 flex-grow min-h-screen py-12 px-6 transition-colors duration-300 shadow-md dark:shadow-[0_4px_6px_1px_rgba(255,255,255,0.8)]"
     >
       <div className="max-w-4xl mx-auto text-center">
         <motion.h2
@@ -29,7 +33,7 @@ export default function ConnectMe() {
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Whether you have a question, a project idea, or just want to say hello — I’d love to hear from you!
+          {siteConfig.contactMeSlogan}
         </motion.p>
 
         <motion.div
@@ -39,13 +43,13 @@ export default function ConnectMe() {
           transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <Link href={`mailto:${data.personalInfo.email}`} aria-label="Email">
+          <Link href={`mailto:${personalInfo.email}`} aria-label="Email">
             <FaEnvelope className="hover:text-blue-700 transition-colors duration-200" />
           </Link>
-          <Link href={data.personalInfo.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <Link href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <FaLinkedin className="hover:text-blue-700 transition-colors duration-200" />
           </Link>
-          <Link href={data.personalInfo.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <Link href={personalInfo.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <FaGithub className="hover:text-blue-700 transition-colors duration-200" />
           </Link>
         </motion.div>

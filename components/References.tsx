@@ -3,8 +3,9 @@
 
 import { motion } from 'framer-motion'
 import data from '../data/references.json'
+import { Reference } from '@/types/notion'
 
-export default function References() {
+export default function References({referenceList}: {referenceList: Reference[]}) {
   return (
     <section className="bg-white  py-8 shadow-md dark:shadow-[0_4px_6px_1px_rgba(255,255,255,0.8)] transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100" id="references">
       <div className="max-w-6xl mx-auto p-6">
@@ -18,7 +19,7 @@ export default function References() {
         </motion.h2>
         
         <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-          {data.references.map((ref, i) => (
+          {referenceList.map((ref, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 10 }}

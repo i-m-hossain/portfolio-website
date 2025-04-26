@@ -2,8 +2,10 @@
 import { fetchFromNotion } from '@/lib/notionClient'
 import { Education } from '@/types/notion'
 import EducationItem from './EducationItem'
+import { siteConfig } from '@/config/siteConfig'
 
 const databaseId = process.env.NOTION_EDUCATION_DATABASE_ID!
+export const revalidate = siteConfig.revalidateTime
 
 export default async function EducationSection() {
   let educationList: Education[] = []

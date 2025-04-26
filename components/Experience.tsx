@@ -2,9 +2,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import data from '../data/experience.json'
+import { ExperienceData } from '@/types/notion'
 
-export default function Experience() {
+export default function Experience({experiences}: {experiences: ExperienceData[]}) {
   return (
     <section className="bg-gray-50 py-8 dark:bg-gray-900 dark:text-gray-100  shadow-md dark:shadow-[0_4px_6px_1px_rgba(255,255,255,0.8)] transition-colors duration-300" id="experience">
       <div className="max-w-6xl mx-auto p-6">
@@ -18,7 +18,7 @@ export default function Experience() {
         </motion.h2>
         
         <div className="space-y-8">
-          {data.experiences.map((exp, i) => (
+          {experiences.map((exp, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 10 }}

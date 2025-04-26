@@ -24,9 +24,8 @@ const cardVariants = {
   
   const RecommendationCard = ({ rec, index }) => {
     const [expanded, setExpanded] = useState(false);
-  
+    
     const toggleExpanded = () => setExpanded(!expanded);
-  
     return (
       <motion.div
         key={index}
@@ -56,7 +55,7 @@ const cardVariants = {
           <p className="text-gray-600 dark:text-gray-400 text-sm">{rec.jobTitle}</p>
           <p className="text-gray-500 dark:text-gray-500 text-sm">{rec.company}</p>
           <p className="text-gray-400 text-xs mt-1">
-            {new Date(rec.date).toLocaleDateString('en-US', {
+            {new Date(rec.creationDate).toLocaleDateString('en-US', {
               year: 'numeric',
               month: 'long',
               day: 'numeric',

@@ -2,7 +2,7 @@ import { fetchFromNotion } from '@/lib/notionClient';
 import Skills from './Skills';
 import { siteConfig } from '@/config/siteConfig';
 import { SkillData } from '@/types/notion';
-import { collectSkillsByColumn } from '@/helper/gatherSkills';
+import { collectSkillsByColumn } from '@/helper/collectSkillsByColumn';
 
 export const revalidate = siteConfig.revalidateTime;
 

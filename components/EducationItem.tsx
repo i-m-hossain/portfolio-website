@@ -23,8 +23,9 @@ export default function EducationItem({ educationList }: Props) {
                 </motion.h2>
 
                 <div className="space-y-8">
-                    {educationList.map(education =>
+                    {educationList.map((education, i) =>
                         <motion.div
+                            key={i}
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4, delay: 1 * 0.1 }}

@@ -26,11 +26,37 @@ export interface Education {
     duration: string
 }
 
-export interface SkillData{
-    backendApiDevelopment: string [];
-    frontendDevelopment: string [];
-    devOpsSystemAdministration: string [];
-    database: string [];
-    dataEngineeringAutomation: string [];
-    otherTools: string [];
+export interface SkillData {
+    backendApiDevelopment: string[];
+    frontendDevelopment: string[];
+    devOpsSystemAdministration: string[];
+    database: string[];
+    dataEngineeringAutomation: string[];
+    otherTools: string[];
+}
+
+
+export interface ExperienceData  {
+    title: string;
+    company: string;
+    location: string;
+    duration: string;
+    description: string[];
+    stack: string[];
+};
+
+export interface Reference{
+    name: string,
+    title: string,
+    email: string,
+    phone: string,
+}
+
+export interface PersonalInfo{
+    name: string,
+    title: string,
+    phone: string,
+    email: string,
+    github: string,
+    linkedin: string
 }

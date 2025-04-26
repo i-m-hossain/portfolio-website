@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import data from '../data/skill.json'
 import {  SkillData } from '@/types/notion'
+import { keyMapping } from '@/config/keyMapping'
 
 const containerVariants = {
   hidden: { opacity: 0, y: 10 },
@@ -53,7 +54,7 @@ export default function Skills({skillData}: {skillData: SkillData}) {
           {Object.entries(skillData).map(([category, skills], i) => (
             <motion.div key={i} variants={itemVariants}>
               <div className="p-4 border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                <h3 className="font-semibold text-lg mb-2">{category}</h3>
+                <h3 className="font-semibold text-lg mb-2">{keyMapping[category]}</h3>
                 <ul className="list-disc pl-5 space-y-1">
                   {skills.map((skill, idx) => (
                     <li key={idx} className="text-gray-600 dark:text-gray-100">
