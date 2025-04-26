@@ -4,24 +4,33 @@ export interface Blog {
     url: string
 }
 export interface Recommendation {
-    "firstName": string,
-    "lastName": string,
-    "jobTitle": string,
-    "company": string,
-    "status": string,
-    "creationDate": string
+    firstName: string,
+    lastName: string,
+    jobTitle: string,
+    company: string,
+    status: string,
+    creationDate: string
 }
 
 export interface Certification {
-    "certificationName": string,
-    "certificationLink": string,
-    "issued": string,
-    "credentialId": string,
-    "issuedBy": string
+    certificationName: string,
+    certificationLink: string,
+    issued: string,
+    credentialId: string,
+    issuedBy: string
 }
 
-export interface Education{
-    "degree": string,
-    "institution": string,
-    "duration": string
+export interface Education {
+    degree: string,
+    institution: string,
+    duration: string
+}
+
+export interface SkillData{
+    backendApiDevelopment: string [];
+    frontendDevelopment: string [];
+    devOpsSystemAdministration: string [];
+    database: string [];
+    dataEngineeringAutomation: string [];
+    otherTools: string [];
 }

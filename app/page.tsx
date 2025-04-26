@@ -1,22 +1,18 @@
 import About from '../components/About'
-import Skills from '../components/Skills'
-import Experience from '../components/Experience'
-import References from '../components/References'
-import Footer from '../components/Footer'
 import Layout from '@/components/Layout'
-import Certifications from '@/components/Certifications'
-import notion from '@/lib/notion';
 import CertificationsSection from '@/components/CertificationsSection'
 import EducationSection from '../components/EducationSection'
+import SkillSection from '@/components/SkillSection'
 
 export default async function Home() {
   return (
     <Layout>
       <About />
+      <SkillSection />
+      {/* <Experience /> */}
       <CertificationsSection/>
       <EducationSection />
-      {/* <Skills />
-      <Experience />
+      {/* 
       <References /> */}
     </Layout>
   )

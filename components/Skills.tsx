@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import data from '../data/skill.json'
+import {  SkillData } from '@/types/notion'
 
 const containerVariants = {
   hidden: { opacity: 0, y: 10 },
@@ -21,7 +22,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 }
 
-export default function Skills() {
+export default function Skills({skillData}: {skillData: SkillData}) {
   return (
     <section
       className="bg-white py-8 dark:bg-gray-900 dark:text-gray-100 shadow-md dark:shadow-[0_4px_6px_1px_rgba(255,255,255,0.8)] transition-colors duration-300"
@@ -49,7 +50,7 @@ export default function Skills() {
           viewport={{ once: true }}
           variants={containerVariants}
         >
-          {Object.entries(data.skills).map(([category, skills], i) => (
+          {Object.entries(skillData).map(([category, skills], i) => (
             <motion.div key={i} variants={itemVariants}>
               <div className="p-4 border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
                 <h3 className="font-semibold text-lg mb-2">{category}</h3>
