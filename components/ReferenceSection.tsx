@@ -1,27 +1,24 @@
 
-import { fetchFromNotion } from '@/lib/notionClient'
+import { createNotionClient, fetchAndProcessNotion } from '@/lib/notionClient'
 import {  Reference } from '@/types/notion'
-import EducationItem from './EducationItem'
 import { siteConfig } from '@/config/siteConfig'
 import References from './References'
-import {  extractReferenceData } from '@/helper/extractReferenceData'
 
-const databaseId = process.env.NOTION_REFERENCES_DATABASE_ID!
+
 export const revalidate = siteConfig.revalidateTime
 
+const databaseId = process.env.NOTION_REFERENCES_DATABASE_ID!
+const apiKey=process.env.NOTION_TOKEN!
+
 export default async function ReferenceSection() {
-  let referenceList: Reference[] = []
-  
-  try {
-    const results = await fetchFromNotion(databaseId)
-    if (results && Array.isArray(results)) {
-      referenceList = results.map((notionData) => {
-        return extractReferenceData(notionData.properties)
-      })
-    }
-  } catch (error) {
-    console.error('Failed to fetch blogs:', error)
+  const dataMapping = {
+    name: "name",
+    title: "title",
+    email: "email",
+    phone: "phone",
   }
+  const notionClient = createNotionClient(apiKey);
+  const referenceList = await fetchAndProcessNotion<Reference>(notionClient, databaseId, dataMapping);
 
   return (
     <References referenceList={referenceList}/>

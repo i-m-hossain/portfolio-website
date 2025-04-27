@@ -19,7 +19,7 @@ const cardVariants = {
 export default function Certifications({certifications}: {certifications: Certification[]}) {
   return (
     <section
-      className="py-8 shadow-md border-b-gray-300 dark:shadow-[0_4px_6px_1px_rgba(255,255,255,0.8)] transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100"
+      className="bg-gray-100 py-8 shadow-md border-b-gray-300 dark:shadow-[0_4px_6px_1px_rgba(255,255,255,0.8)] transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100"
       id="certification"
     >
       <div className="max-w-6xl mx-auto p-6">

@@ -1,35 +1,33 @@
-import { SkillData } from "@/types/notion";
+import { SkillData, SkillDataFromNotion } from "@/types/notion";
 
-export function collectSkillsByColumn(results: any[]): SkillData {
-    const skills: SkillData = {
+export function collectSkillsByColumn(result: SkillDataFromNotion[]): SkillData  {
+    let skills:SkillData= {
         backendApiDevelopment: [],
         frontendDevelopment: [],
         devOpsSystemAdministration: [],
         database: [],
         dataEngineeringAutomation: [],
-        otherTools: [],
+        otherTools: []
     };
 
-    results.forEach((notionData) => {
-        const properties = notionData.properties;
-
-        if (!properties) return;
-        let skill = properties['Backend & API Development']?.title?.[0]?.plain_text
+    result.forEach((data:SkillDataFromNotion) => {
+        if (!data) return;
+        let skill = data['backendApiDevelopment']
         skill && skills.backendApiDevelopment.push(skill);
         
-        skill = properties['Frontend Development']?.rich_text?.[0]?.plain_text
+        skill = data['frontendDevelopment']
         skill && skills.frontendDevelopment.push(skill);
 
-        skill = properties['DevOps & System Administration']?.rich_text?.[0]?.plain_text || ''
+        skill = data['devOpsSystemAdministration']
         skill && skills.devOpsSystemAdministration.push(skill);
 
-        skill = properties['Database']?.rich_text?.[0]?.plain_text || ''
+        skill = data['database']
         skill && skills.database.push(skill);
 
-        skill = properties['Data Engineering & Automation']?.rich_text?.[0]?.plain_text || ''
+        skill = data['dataEngineeringAutomation']
         skill && skills.dataEngineeringAutomation.push(skill);
 
-        skill = properties['Other Tools']?.rich_text?.[0]?.plain_text || ''
+        skill = data['otherTools']
         skill && skills.otherTools.push(skill);
     });
 

@@ -7,7 +7,7 @@ import { Reference } from '@/types/notion'
 
 export default function References({referenceList}: {referenceList: Reference[]}) {
   return (
-    <section className="bg-white  py-8 shadow-md dark:shadow-[0_4px_6px_1px_rgba(255,255,255,0.8)] transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100" id="references">
+    <section className="bg-white  py-8 pb-16 shadow-md dark:shadow-[0_4px_6px_1px_rgba(255,255,255,0.8)] transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100" id="references">
       <div className="max-w-6xl mx-auto p-6">
         <motion.h2
           initial={{ opacity: 0, y: 10 }}

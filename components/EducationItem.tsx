@@ -9,7 +9,7 @@ type Props = {
 export default function EducationItem({ educationList }: Props) {
     return (
         <section
-            className="py-8 shadow-md dark:shadow-[0_4px_6px_1px_rgba(255,255,255,0.8)] transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100"
+            className=" py-8 shadow-md dark:shadow-[0_4px_6px_1px_rgba(255,255,255,0.8)] transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100"
             id="education"
         >
             <div className="max-w-6xl mx-auto p-6">

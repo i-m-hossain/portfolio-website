@@ -1,3 +1,6 @@
+export interface Summary{
+    summary: string
+}
 export interface Blog {
     title: string
     publishedAt: string
@@ -9,7 +12,8 @@ export interface Recommendation {
     jobTitle: string,
     company: string,
     status: string,
-    creationDate: string
+    creationDate: string,
+    text: string
 }
 
 export interface Certification {
@@ -34,6 +38,14 @@ export interface SkillData {
     dataEngineeringAutomation: string[];
     otherTools: string[];
 }
+export interface SkillDataFromNotion {
+    backendApiDevelopment: string;
+    frontendDevelopment: string;
+    devOpsSystemAdministration: string;
+    database: string;
+    dataEngineeringAutomation: string;
+    otherTools: string;
+}
 
 
 export interface ExperienceData  {
@@ -41,8 +53,8 @@ export interface ExperienceData  {
     company: string;
     location: string;
     duration: string;
-    description: string[];
-    stack: string[];
+    description: string;
+    stack: string;
 };
 
 export interface Reference{

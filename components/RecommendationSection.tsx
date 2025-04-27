@@ -1,12 +1,11 @@
 'use client'
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import data from "@/data/recommendations.json"
 import { Recommendation } from '@/types/notion';
 const limit=600
 const cardVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: (i) => ({
+    visible: (i: number) => ({
       opacity: 1,
       y: 0,
       transition: {
@@ -17,12 +16,12 @@ const cardVariants = {
     })
   };
   
-  const truncateText = (text, limit = 600) => {
+  const truncateText = (text:string, limit = 600) => {
     if (text.length <= limit) return text;
     return text.slice(0, limit) + '...';
   };
   
-  const RecommendationCard = ({ rec, index }) => {
+  const RecommendationCard = ({ rec, index }:{rec: Recommendation, index: number}) => {
     const [expanded, setExpanded] = useState(false);
     
     const toggleExpanded = () => setExpanded(!expanded);
@@ -51,7 +50,7 @@ const cardVariants = {
         </div>
   
         <div className="border-t border-gray-200 dark:border-gray-700 pt-4 mt-4">
-          <p className="text-gray-900 dark:text-white font-semibold">{rec.name}</p>
+          <p className="text-gray-900 dark:text-white font-semibold">{rec.firstName + " "+rec.lastName}</p>
           <p className="text-gray-600 dark:text-gray-400 text-sm">{rec.jobTitle}</p>
           <p className="text-gray-500 dark:text-gray-500 text-sm">{rec.company}</p>
           <p className="text-gray-400 text-xs mt-1">

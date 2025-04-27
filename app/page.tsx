@@ -12,8 +12,8 @@ export default async function Home() {
       <About />
       <SkillSection />
       <ExperienceSection />
-      <CertificationsSection/>
       <EducationSection />
+      <CertificationsSection/>
       <ReferenceSection/> 
     </Layout>
   )
