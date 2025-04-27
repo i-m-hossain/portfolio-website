@@ -2,7 +2,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import data from '../data/references.json'
 import { Reference } from '@/types/notion'
 
 export default function References({referenceList}: {referenceList: Reference[]}) {

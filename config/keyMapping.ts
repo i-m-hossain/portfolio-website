@@ -1,4 +1,4 @@
-export const keyMapping={
+export const skillDisplayNames: Record<string, string>={
     "backendApiDevelopment": "Backend API Development",
     "frontendDevelopment": "Frontend Development",
     "devOpsSystemAdministration":"Dev-Ops System Administration",

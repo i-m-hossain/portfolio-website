@@ -1,8 +1,8 @@
-import { siteConfig } from '@/config/siteConfig'
-import { createNotionClient, fetchAndProcessNotion, fetchFromNotion } from '@/lib/notionClient'
+
+import { createNotionClient, fetchAndProcessNotion } from '@/lib/notionClient'
 import { Certification } from '@/types/notion'
 import Certifications from './Certifications'
-export const revalidate = siteConfig.revalidateTime
+export const revalidate = 86400
 
 const databaseId = process.env.NOTION_CERTIFICATIONS_DATABASE_ID!
 const apiKey = process.env.NOTION_TOKEN!;

@@ -1,10 +1,10 @@
 import { createNotionClient, fetchAndProcessNotion, fetchFromNotion } from '@/lib/notionClient';
-import Skills from './Skills';
-import { siteConfig } from '@/config/siteConfig';
+import Skills from '@/components/Skills';
+;
 import { SkillData, SkillDataFromNotion } from '@/types/notion';
 import { collectSkillsByColumn } from '@/helper/collectSkillsByColumn';
 
-export const revalidate = siteConfig.revalidateTime;
+export const revalidate = 86400;
 
 const databaseId = process.env.NOTION_SKILLS_DATABASE_ID!;
 const apiKey = process.env.NOTION_TOKEN!;

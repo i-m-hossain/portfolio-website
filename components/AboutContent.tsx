@@ -2,6 +2,7 @@
 
 import { Summary } from '@/types/notion'
 import { motion } from 'framer-motion'
+
 export default function AboutContent({ summary }: { summary: Summary }) {
     return (
         <section className="bg-gray-50 py-8 dark:bg-gray-900 shadow-md dark:shadow-[0_4px_6px_1px_rgba(255,255,255,0.8)] transition-colors duration-300" id="about">

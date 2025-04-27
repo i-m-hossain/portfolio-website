@@ -2,11 +2,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import data from '../data/personalInfo.json'
 import Link from 'next/link'
-import { ThemeToggle } from './ThemeToggle'
+import { ThemeToggle } from '@/components/ThemeToggle'
 
 export default function Header() {
+  const logo="Md Imran Hossain"
   return (
     <header className="sticky top-0 z-10 bg-white  shadow-md dark:shadow-[0_1px_1px_-1px_rgba(255,255,255,0.8)] transition-colors duration-300 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto p-6 flex items-center justify-between">
@@ -15,7 +15,7 @@ export default function Header() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Link href="/" className="text-xl font-bold text-gray-800 dark:text-gray-100">{data.personalInfo.name}</Link>
+          <Link href="/" className="text-xl font-bold text-gray-800 dark:text-gray-100">{logo}</Link>
         </motion.div>
 
         <motion.nav

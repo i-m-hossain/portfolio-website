@@ -1,11 +1,10 @@
 
 import { createNotionClient, fetchAndProcessNotion, fetchFromNotion } from '@/lib/notionClient'
 import { ExperienceData } from '@/types/notion'
-import Experience from './Experience'
-import { parseExperience } from '@/helper/parseExperience'
-import { siteConfig } from '@/config/siteConfig'
+import Experience from '@/components/Experience'
 
-export const revalidate = siteConfig.revalidateTime
+
+export const revalidate = 86400
 
 const databaseId = process.env.NOTION_EXPERIENCE_DATABASE_ID!
 const apiKey = process.env.NOTION_TOKEN!

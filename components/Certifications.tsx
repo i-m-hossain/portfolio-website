@@ -1,11 +1,11 @@
 'use client'
-import CertificationCard from './CertificationCard'
+import CertificationCard from '@/components/CertificationCard'
 import { motion } from 'framer-motion'
 import { Certification } from '@/types/notion';
 
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
-  visible: (i) => ({
+  visible: (i: number) => ({
     opacity: 1,
     y: 0,
     transition: {

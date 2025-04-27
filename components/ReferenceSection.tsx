@@ -1,11 +1,11 @@
 
 import { createNotionClient, fetchAndProcessNotion } from '@/lib/notionClient'
 import {  Reference } from '@/types/notion'
-import { siteConfig } from '@/config/siteConfig'
-import References from './References'
+
+import References from '@/components/References'
 
 
-export const revalidate = siteConfig.revalidateTime
+export const revalidate = 86400
 
 const databaseId = process.env.NOTION_REFERENCES_DATABASE_ID!
 const apiKey=process.env.NOTION_TOKEN!

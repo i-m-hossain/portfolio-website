@@ -1,11 +1,13 @@
 import Layout from "@/components/Layout"
 import RecommendationSection from "@/components/RecommendationSection"
-import { siteConfig } from "@/config/siteConfig"
+
 import { createNotionClient, fetchAndProcessNotion, fetchFromNotion } from "@/lib/notionClient"
 import { Recommendation } from "@/types/notion"
+export const revalidate = 86400
+
 const databaseId = process.env.NOTION_RECOMMENDATION_DATABASE_ID!
 const apiKey = process.env.NOTION_TOKEN!
-export const revalidate = siteConfig.revalidateTime
+
 export default async function RecommendationPage() {
   const recommendationMapping = {
     creationDate: 'Creation Date',

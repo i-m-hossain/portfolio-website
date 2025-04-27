@@ -1,12 +1,13 @@
-import { siteConfig } from '@/config/siteConfig'
-import AboutContent from './AboutContent'
+
+import AboutContent from '@/components/AboutContent'
 import { createNotionClient, fetchAndProcessNotion, } from '@/lib/notionClient'
 import { Summary } from '@/types/notion'
 
-export const revalidate = siteConfig.revalidateTime
+export const revalidate = 86400
 
 const databaseId = process.env.NOTION_SUMMARY_DATABASE_ID!
 const apiKey = process.env.NOTION_TOKEN!
+
 export default async function About() {
   const notionClient = createNotionClient(apiKey);
   const summaryMappings = {

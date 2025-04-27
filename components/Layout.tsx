@@ -2,8 +2,8 @@
 
 
 import { useEffect } from 'react'
-import Footer from './Footer'
-import Header from './Header'
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
 import ParticleBackground from './ParticleBackground'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
