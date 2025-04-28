@@ -4,8 +4,11 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ThemeToggle } from '@/components/ThemeToggle'
+import { useUser } from '@/context/userContext'
 
 export default function Header() {
+  const {user} = useUser()
+  console.log(user);
   const logo="Md Imran Hossain"
   return (
     <header className="sticky top-0 z-10 bg-white  shadow-md dark:shadow-[0_1px_1px_-1px_rgba(255,255,255,0.8)] transition-colors duration-300 dark:bg-gray-900">
@@ -32,6 +35,8 @@ export default function Header() {
           <Link  href={'/blog'} className="text-gray-600 hover:text-blue-600 dark:text-gray-100">Blog</Link>
           <Link  href={'/recommendation'} className="text-gray-600 hover:text-blue-600 dark:text-gray-100">Recommendations</Link>
           <Link  href={'/contact'} className="text-gray-600 hover:text-blue-600 dark:text-gray-100">Contact</Link>
+          {!user && <Link  href={'/login'} className="text-gray-600 hover:text-blue-600 dark:text-gray-100">Login</Link>}
+          {user && <Link  href={'/profile'} className="text-gray-600 hover:text-blue-600 dark:text-gray-100">Profile</Link>}
         </motion.nav>
         <ThemeToggle></ThemeToggle>
       </div>
