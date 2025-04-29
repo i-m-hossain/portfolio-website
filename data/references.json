@@ -1,16 +1,14 @@
-{
-    "references": [
-      {
-        "name": "Md Monir Hossen",
-        "title": "Professor, KUET",
-        "email": "mhossen@ece.kuet.ac.bd",
-        "phone": "+8801714087380"
-      },
-      {
-        "name": "SM Yeaminul Islam",
-        "title": "Line Manager, Banglalink",
-        "email": "yeaminul.islam@banglalink.net",
-        "phone": "+8801962425382"
-      }
-    ]
-}
+[
+  {
+    "name": "Md Monir Hossen",
+    "title": "Professor, KUET",
+    "email": "mhossen@ece.kuet.ac.bd",
+    "phone": "+8801714087380"
+  },
+  {
+    "name": "SM Yeaminul Islam",
+    "title": "Line Manager, Banglalink",
+    "email": "yeaminul.islam@banglalink.net",
+    "phone": "+8801962425382"
+  }
+]

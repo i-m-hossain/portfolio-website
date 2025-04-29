@@ -2,10 +2,17 @@
  * Flexible helper functions for fetching and processing Notion database data
  */
 
-import { PersonalInfo, Recommendation } from "@/types/notion";
 import { Client } from "@notionhq/client";
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { logError } from "./errorLogger";
+import { fetchLocalData } from "./fetchLocalData";
 
+/**
+ * Initialize Notion client
+ */
+export function createNotionClient(apiKey: string): Client {
+  return new Client({ auth: apiKey });
+}
 // Type definitions for common Notion property types
 export type NotionPropertyTypes = 
   | 'title' 
@@ -28,12 +35,7 @@ export type NotionPropertyTypes =
   | 'last_edited_time'
   | 'formula';
 
-/**
- * Initialize Notion client
- */
-export function createNotionClient(apiKey: string): Client {
-  return new Client({ auth: apiKey });
-}
+
 
 /**
  * Fetch data from a Notion database
@@ -57,7 +59,7 @@ export async function fetchFromNotion(
       (row): row is PageObjectResponse => 'properties' in row
     );
   } catch (error) {
-    console.error("Error fetching from Notion:", error);
+    logError('fetchFromNotion', error);
     return [];
   }
 }
@@ -159,9 +161,22 @@ export async function fetchAndProcessNotion<T>(
   notionClient: Client,
   databaseId: string,
   propertyMappings: Record<string, string>,
+  jsonFileName: string = '',
   filter?: any,
-  sorts?: any[]
+  sorts?: any[],
+  
 ): Promise<T[]> {
-  const results = await fetchFromNotion(notionClient, databaseId, filter, sorts);
-  return results.length > 0 ? processNotionResults<T>(results, propertyMappings) : [];
+  const notionData  = await fetchFromNotion(notionClient, databaseId, filter, sorts);
+  // If we got data from Notion, process it
+  if (notionData && notionData.length > 0) {
+    return processNotionResults<T>(notionData, propertyMappings)
+  }
+  
+  if (jsonFileName) {
+    const localData = await fetchLocalData<T>(jsonFileName);
+    if (localData && localData.length > 0) {
+      return localData;
+    }
+  }
+  return [];
 }
