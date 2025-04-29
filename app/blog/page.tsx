@@ -18,7 +18,6 @@ export default async function BlogPage() {
   };
   const notionClient = createNotionClient(apiKey);
   const blogs = await fetchAndProcessNotion<Blog>(notionClient, databaseId, blogMappings, jsonFileName);
-  console.log(blogs)
   return (
     <Layout>
       <BlogContent blogs={blogs} />

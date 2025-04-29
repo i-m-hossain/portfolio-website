@@ -168,9 +168,9 @@ export async function fetchAndProcessNotion<T>(
 ): Promise<T[]> {
   const notionData  = await fetchFromNotion(notionClient, databaseId, filter, sorts);
   // If we got data from Notion, process it
-  // if (notionData && notionData.length > 0) {
-  //   return processNotionResults<T>(notionData, propertyMappings)
-  // }
+  if (notionData && notionData.length > 0) {
+    return processNotionResults<T>(notionData, propertyMappings)
+  }
   
   if (jsonFileName) {
     const localData = await fetchLocalData<T>(jsonFileName);
