@@ -1,10 +1,10 @@
-{
-    "personalInfo": {
-      "name": "Md Imran Hossain",
-      "title": "Software Engineer",
-      "phone": "+8801728603351",
-      "email": "imran.kuet14@gmail.com",
-      "github": "https://github.com/i-m-hossain",
-      "linkedin": "https://linkedin.com/in/imran-kuet14"
-    }
-}
+[
+  {
+    "name": "Md Imran Hossain",
+    "title": "Software Engineer",
+    "phone": "+8801728603351",
+    "email": "imran.kuet14@gmail.com",
+    "github": "https://github.com/i-m-hossain",
+    "linkedin": "https://linkedin.com/in/imran-kuet14"
+  }
+]

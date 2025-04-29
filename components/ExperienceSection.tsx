@@ -8,6 +8,7 @@ export const revalidate = 86400
 
 const databaseId = process.env.NOTION_EXPERIENCE_DATABASE_ID!
 const apiKey = process.env.NOTION_TOKEN!
+const jsonFileName = process.env.LOCAL_EXPERIENCES_DATA_JSON_FILE_NAME!
 
 export default async function ExperienceSection() {
   const dataMapping = {
@@ -19,7 +20,7 @@ export default async function ExperienceSection() {
     "stack": "stack"
   }
   const notionClient = createNotionClient(apiKey);
-  const experiences = await fetchAndProcessNotion<ExperienceData>(notionClient, databaseId, dataMapping);
+  const experiences = await fetchAndProcessNotion<ExperienceData>(notionClient, databaseId, dataMapping, jsonFileName);
   return (
     <Experience experiences={experiences} />
   )

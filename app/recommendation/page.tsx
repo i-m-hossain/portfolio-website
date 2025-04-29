@@ -7,6 +7,7 @@ export const revalidate = 86400
 
 const databaseId = process.env.NOTION_RECOMMENDATION_DATABASE_ID!
 const apiKey = process.env.NOTION_TOKEN!
+const jsonFileName= process.env.LOCAL_RECOMMENDATIONS_DATA_JSON_FILE_NAME!
 
 export default async function RecommendationPage() {
   const recommendationMapping = {
@@ -19,8 +20,8 @@ export default async function RecommendationPage() {
     jobTitle: 'Job Title'
   };
   const notionClient = createNotionClient(apiKey);
-  const recommendations = await fetchAndProcessNotion<Recommendation>(notionClient, databaseId, recommendationMapping);
-  
+  const recommendations = await fetchAndProcessNotion<Recommendation>(notionClient, databaseId, recommendationMapping, jsonFileName);
+  console.log(recommendations)
   return (
     <Layout>
       <RecommendationSection recommendations={recommendations} />

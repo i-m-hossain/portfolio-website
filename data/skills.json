@@ -1,0 +1,58 @@
+[
+  {
+    "backendApiDevelopment": "PHP (Laravel)",
+    "frontendDevelopment": "JavaScript (React, Next.js, Svelte)",
+    "devOpsSystemAdministration": "Docker",
+    "database": "Scripting with Python for large datasets",
+    "dataEngineeringAutomation": "MySQL",
+    "otherTools": "Git"
+  },
+  {
+    "backendApiDevelopment": "Node.js (Express)",
+    "frontendDevelopment": "",
+    "devOpsSystemAdministration": "Docker Compose",
+    "database": "",
+    "dataEngineeringAutomation": "MongoDB",
+    "otherTools": "Gitlab"
+  },
+  {
+    "backendApiDevelopment": "",
+    "frontendDevelopment": "",
+    "devOpsSystemAdministration": "Nginx",
+    "database": "",
+    "dataEngineeringAutomation": "",
+    "otherTools": "Redis"
+  },
+  {
+    "backendApiDevelopment": "",
+    "frontendDevelopment": "",
+    "devOpsSystemAdministration": "Bash scripting",
+    "database": "",
+    "dataEngineeringAutomation": "",
+    "otherTools": "Redis-sentinel"
+  },
+  {
+    "backendApiDevelopment": "",
+    "frontendDevelopment": "",
+    "devOpsSystemAdministration": "",
+    "database": "",
+    "dataEngineeringAutomation": "",
+    "otherTools": "Jenkins"
+  },
+  {
+    "backendApiDevelopment": "",
+    "frontendDevelopment": "",
+    "devOpsSystemAdministration": "",
+    "database": "",
+    "dataEngineeringAutomation": "",
+    "otherTools": "CI/CD"
+  },
+  {
+    "backendApiDevelopment": "",
+    "frontendDevelopment": "",
+    "devOpsSystemAdministration": "",
+    "database": "",
+    "dataEngineeringAutomation": "",
+    "otherTools": "Jira"
+  }
+]

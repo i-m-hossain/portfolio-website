@@ -10,10 +10,10 @@ export default async function Home() {
   return (
     <Layout>
       <About />
-      {/* <SkillSection /> */}
-      {/* <ExperienceSection /> */}
-      {/* <EducationSection /> */}
-      {/* <CertificationsSection/> */}
+      <SkillSection />
+      <ExperienceSection />
+      <EducationSection />
+      <CertificationsSection/>
       <ReferenceSection/> 
     </Layout>
   )
