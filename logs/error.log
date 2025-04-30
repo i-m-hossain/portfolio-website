@@ -896,3 +896,63 @@ Error: ENOENT: no such file or directory, open '/home/imran/dev_imran/portfolio-
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
     at async CertificationsSection (/home/imran/dev_imran/portfolio-website/.next/server/chunks/ssr/[root-of-the-server]__73f424da._.js:412:28)
 
+[2025-04-30T11:59:11.128Z] [fetchFromNotion] ERROR: request to https://api.notion.com/v1/databases/1e1ce875399e8066880dc52ba142507f/query failed, reason: getaddrinfo EAI_AGAIN api.notion.com
+FetchError: request to https://api.notion.com/v1/databases/1e1ce875399e8066880dc52ba142507f/query failed, reason: getaddrinfo EAI_AGAIN api.notion.com
+    at ClientRequest.<anonymous> (/home/imran/dev_imran/portfolio-website/.next/server/chunks/ssr/node_modules_ce717917._.js:3803:20)
+    at ClientRequest.emit (node:events:519:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+[2025-04-30T11:59:11.301Z] [fetchFromNotion] ERROR: request to https://api.notion.com/v1/databases/1e1ce875399e8066880dc52ba142507f/query failed, reason: getaddrinfo EAI_AGAIN api.notion.com
+FetchError: request to https://api.notion.com/v1/databases/1e1ce875399e8066880dc52ba142507f/query failed, reason: getaddrinfo EAI_AGAIN api.notion.com
+    at ClientRequest.<anonymous> (/home/imran/dev_imran/portfolio-website/.next/server/chunks/ssr/node_modules_ce717917._.js:3803:20)
+    at ClientRequest.emit (node:events:519:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+[2025-04-30T12:05:38.307Z] [fetchFromNotion] ERROR: request to https://api.notion.com/v1/databases/1e1ce875399e8066880dc52ba142507f/query failed, reason: 
+FetchError: request to https://api.notion.com/v1/databases/1e1ce875399e8066880dc52ba142507f/query failed, reason: 
+    at ClientRequest.<anonymous> (/home/imran/dev_imran/portfolio-website/.next/server/chunks/ssr/node_modules_ce717917._.js:3803:20)
+    at ClientRequest.emit (node:events:519:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+[2025-04-30T12:05:38.390Z] [fetchFromNotion] ERROR: request to https://api.notion.com/v1/databases/1e1ce875399e8066880dc52ba142507f/query failed, reason: 
+FetchError: request to https://api.notion.com/v1/databases/1e1ce875399e8066880dc52ba142507f/query failed, reason: 
+    at ClientRequest.<anonymous> (/home/imran/dev_imran/portfolio-website/.next/server/chunks/ssr/node_modules_ce717917._.js:3803:20)
+    at ClientRequest.emit (node:events:519:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+[2025-04-30T12:06:18.629Z] [fetchFromNotion] ERROR: request to https://api.notion.com/v1/databases/1e1ce875399e8066880dc52ba142507f/query failed, reason: 
+FetchError: request to https://api.notion.com/v1/databases/1e1ce875399e8066880dc52ba142507f/query failed, reason: 
+    at ClientRequest.<anonymous> (/home/imran/dev_imran/portfolio-website/.next/server/chunks/ssr/node_modules_ce717917._.js:3803:20)
+    at ClientRequest.emit (node:events:519:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+[2025-04-30T12:06:21.831Z] [fetchFromNotion] ERROR: request to https://api.notion.com/v1/databases/1e1ce875399e80428b64e6a4b389f38d/query failed, reason: 
+FetchError: request to https://api.notion.com/v1/databases/1e1ce875399e80428b64e6a4b389f38d/query failed, reason: 
+    at ClientRequest.<anonymous> (/home/imran/dev_imran/portfolio-website/.next/server/chunks/ssr/node_modules_379a4a70._.js:3803:20)
+    at ClientRequest.emit (node:events:519:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
