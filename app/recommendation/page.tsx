@@ -21,7 +21,7 @@ export default async function RecommendationPage() {
   };
   const notionClient = createNotionClient(apiKey);
   const recommendations = await fetchAndProcessNotion<Recommendation>(notionClient, databaseId, recommendationMapping, jsonFileName);
-  console.log(recommendations)
+
   return (
     <Layout>
       <RecommendationSection recommendations={recommendations} />
