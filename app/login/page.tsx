@@ -6,12 +6,7 @@ import { redirect } from 'next/navigation'
 import { useEffect } from 'react'
 
 export default function LoginPage() {
-    const { login, user} = useUser()
-    useEffect(()=>{
-        if(user){
-            redirect("/")
-        }
-    },[user])
+    const { login} = useUser()
     const handleLogin = async (email: string, password: string) => {
         await login(email, password)
     }

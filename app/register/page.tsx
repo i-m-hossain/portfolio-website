@@ -7,7 +7,7 @@ export default function RegisterPage() {
     const {register} = useUser()
 
     const handleRegister = async (email: string, password: string) => {
-        await register(email, password)
+        await register(email, password, "admin")
     }
 
     return (

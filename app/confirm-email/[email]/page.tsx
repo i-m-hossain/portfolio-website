@@ -1,8 +1,9 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import {  useRouter, useParams } from 'next/navigation'
+import { useRouter, useParams } from 'next/navigation'
 import { supabase } from '@/lib/supabaseClient'
+import toast from 'react-hot-toast'
 
 export default function ConfirmEmailPage() {
   const params = useParams();
@@ -12,98 +13,110 @@ export default function ConfirmEmailPage() {
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
   const [isResending, setIsResending] = useState(false);
+  const [isRefreshing, setIsRefreshing] = useState(false);
 
   useEffect(() => {
-    const checkEmailConfirmed = async () => {
-      try {
-        const { data: { user }, error } = await supabase.auth.getUser();
+    checkEmailConfirmed()
+  }, [])
 
-        if (error) {
-          console.error('Error fetching user:', error.message);
-          setError('Still waiting for email confirmation...');
-          setChecking(false);
-          return;
-        }
+  // Optional: Auto-polling every 5 seconds (uncomment if needed)
 
-        if (user?.email_confirmed_at) {
-          router.replace('/');
-        } else {
-          setError('Please confirm your email and refresh the page.');
-          setChecking(false);
-        }
-      } catch (err) {
-        console.error('Unexpected error:', err);
-        setError('Something went wrong.');
-        setChecking(false);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     checkEmailConfirmed(true)
+  //   }, 5000)
+  //   return () => clearInterval(interval)
+  // }, [])
+
+
+  const checkEmailConfirmed = async (silent = false) => {
+    try {
+      if (!silent) setIsRefreshing(true)
+
+      const { data: { user }, error } = await supabase.auth.getUser()
+      console.log({error})
+      if (error) {
+        if (!silent) setError('Still waiting for email confirmation...')
+        return
       }
-    };
 
-    checkEmailConfirmed();
-  }, [router]);
+      if (user?.email_confirmed_at) {
+        toast.success('Email confirmed!')
+        router.replace('/')
+      } else if (!silent) {
+        setError('Email is not confirmed yet.')
+      }
+    } catch (err) {
+      if (!silent) setError('Something went wrong.')
+    } finally {
+      setChecking(false)
+      if (!silent) setIsRefreshing(false)
+    }
+  }
 
   const handleResend = async () => {
     if (!email) {
-      setError('No email found to resend activation link.');
-      return;
+      setError('No email found to resend activation link.')
+      return
     }
 
     try {
-      setIsResending(true);
-      setMessage('');
-      setError('');
+      setIsResending(true)
+      setMessage('')
+      setError('')
 
       const { error } = await supabase.auth.resend({
         type: 'signup',
         email,
-      });
+      })
 
       if (error) {
-        console.error('Error resending activation link:', error.message);
-        setError('Failed to resend activation email. Please try again later.');
+        setError('Failed to resend activation email. Please try again later.')
       } else {
-        setMessage('Activation email resent successfully!');
+        setMessage('Activation email resent successfully!')
       }
     } catch (err) {
-      console.error('Unexpected resend error:', err);
-      setError('Unexpected error occurred.');
+      setError('Unexpected error occurred.')
     } finally {
-      setIsResending(false);
+      setIsResending(false)
     }
-  };
+  }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <h1 className="text-2xl font-bold mb-4">Confirm your Email</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen px-4 text-center">
+      <h1 className="text-2xl font-bold mb-4">Confirm your Email!</h1>
 
-      {email ? (
-        <p className="text-gray-700 dark:text-gray-300 mb-2">
-          A confirmation link was sent to <strong>{email}</strong>. 
-        </p>
-      ) : (
-        <p className="text-gray-700 dark:text-gray-300 mb-2">
-          A confirmation link was sent to your email.
-        </p>
-      )}
-      <p>After confirmation refresh the page.</p>
+      <p className="text-gray-700 dark:text-gray-300 mb-2">
+        A confirmation link was sent to <strong>{email || 'your email'}</strong>.
+      </p>
+      <p>After confirmation, click refresh below.</p>
+
       {checking ? (
         <p className="text-gray-500 text-sm mb-4">Checking confirmation status...</p>
       ) : (
         <>
-          <p className="text-red-500 text-sm mb-4">{error}</p>
+          {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+          {message && <p className="text-green-500 text-sm mb-4">{message}</p>}
 
-          <button
-            onClick={handleResend}
-            disabled={isResending}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded transition-colors"
-          >
-            {isResending ? 'Resending...' : 'Resend Activation Email'}
-          </button>
+          <div className="flex gap-4 mt-4">
+            <button
+              onClick={() => checkEmailConfirmed()}
+              disabled={isRefreshing}
+              className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded"
+            >
+              {isRefreshing ? 'Refreshing...' : 'Refresh Status'}
+            </button>
 
-          {message && (
-            <p className="text-green-500 text-sm mt-4">{message}</p>
-          )}
+            <button
+              onClick={handleResend}
+              disabled={isResending}
+              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
+            >
+              {isResending ? 'Resending...' : 'Resend Activation Email'}
+            </button>
+          </div>
         </>
       )}
     </div>
-  );
+  )
 }
