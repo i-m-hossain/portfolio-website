@@ -7,7 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "sync:recommendations": "node scripts/sync-recommendations.js"
+    "sync:recommendations": "node scripts/sync-recommendations.js",
+    "sync:references": "node scripts/sync-references.js",
+    "sync:summary": "node scripts/sync-summary.js",
+    "sync:blogs": "node scripts/sync-blogs.js",
+    "sync:certifications": "node scripts/sync-certifications.js",
+    "sync:experiences": "node scripts/sync-experiences.js",
+    "sync:skills": "node scripts/sync-skills.js",
+    "sync:personalInfo": "node scripts/sync-personalInfo.js"
   },
   "dependencies": {
     "@notionhq/client": "^2.3.0",

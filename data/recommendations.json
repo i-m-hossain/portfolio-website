@@ -1,42 +1,47 @@
 [
   {
-    "name": "Imam Uddin Ahamed",
+    "firstName": "Imam Uddin",
+    "lastName": "Ahamed",
     "company": "Robi Axiata Limited",
     "jobTitle": "Senior General Manager (Enterprise Architecture & AI Strategy ), IT",
     "text": "Working with Md. Imran Hossain has been an absolute pleasure. He is an exceptionally talented software engineer with a deep commitment to excellence in his craft. Imran's ability to approach complex challenges with clarity and focus is remarkable, and his contributions have consistently added significant value to our projects.  Imran's strong organizational skills and methodical approach to planning ensure smooth execution of tasks, no matter the complexity. He is resourceful, dependable, and maintains a calm, composed demeanor even in demanding situations. I am confident that Imran's dedication and skillset will make him a standout performer in any team he joins.",
-    "date": "2025-01-25T08:18:00.000Z",
+    "creationDate": "2025-01-25T14:18:00.000+06:00",
     "status": "VISIBLE"
   },
   {
-    "name": "MD Rafiqul Islam",
+    "firstName": "MD Rafiqul",
+    "lastName": "Islam",
     "company": "Tax Star",
     "jobTitle": "Back End Developer",
     "text": "I had the pleasure of working closely with Md Imran Hossain as a full-stack software developer, and I can confidently say he is a remarkable professional and an excellent teammate. We collaborated on a project where we shared responsibilities for both frontend and backend development, and his expertise in JavaScript and its frameworks consistently stood out.  Md Imran has a deep understanding of system assessment, analysis, and implementation. He played a crucial role in designing databases, managing data flow, and ensuring smooth real-time data communication. His skill in building and consuming REST APIs while adhering to high standards of security and authentication was truly impressive.  What sets Md Imran apart is his collaborative approach. He worked seamlessly with the machine learning team, ensuring coding standards were upheld and contributing actively to code reviews. His dedication to agile methodologies and microservices architecture played a key role in keeping our projects efficient and scalable.  One of his most outstanding qualities is his eagerness to learn. Whether it was exploring new technologies through documentation or mastering tools like Zenhub and ClickUp, he embraced every opportunity for growth. His proficiency in version control (Git) and ability to coordinate effectively with partners and working groups ensured that our projects were always delivered on time and with great precision.  On a personal level, Md Imran is approachable, friendly, and a genuine team player. His positive attitude and combination of technical and interpersonal skills made working with him a truly enjoyable experience.  I wholeheartedly recommend Md Imran Hossain for any role or project that requires technical expertise, dedication, and a collaborative spirit. He’s an incredible asset to any team, and I’m grateful for the opportunity to have worked alongside him.",
-    "date": "2025-01-04T07:23:00.000Z",
+    "creationDate": "2025-01-04T13:23:00.000+06:00",
     "status": "VISIBLE"
   },
   {
-    "name": "Md. Mamun Ur Rashid Malik",
+    "firstName": "Md. Mamun Ur Rashid",
+    "lastName": "Malik",
     "company": "Brain Station 23",
     "jobTitle": "Senior Software Engineer",
     "text": "I had the pleasure of collaborating with Imran on multiple projects, and his technical acumen and dedication left a lasting impression. Imran is a skilled developer with deep expertise in React for the frontend and Laravel for backend development. Additionally, his proficiency in scripting with Python allows him to tackle a wide variety of tasks, from automating processes to solving complex technical challenges.  One of Imran's standout qualities is his ability to communicate effectively with external teams and stakeholders. He ensures all technical requirements are clearly understood and works tirelessly to align everyone toward a common goal. His collaborative approach makes him an indispensable bridge between development teams and third-party partners.  Imran's work ethic, problem-solving skills, and attention to detail are unmatched. Whether he’s developing user-centric features, optimizing backend performance, or writing efficient scripts, Imran consistently delivers results that exceed expectations.  I am confident that Imran will continue to thrive in his career and make a significant impact wherever he contributes. I highly recommend him to any team looking for a talented and reliable professional.",
-    "date": "2025-01-04T00:52:00.000Z",
+    "creationDate": "2025-01-04T06:52:00.000+06:00",
     "status": "VISIBLE"
   },
   {
-    "name": "zaman shovon",
+    "firstName": "zaman",
+    "lastName": "shovon",
     "company": "Brain Station 23",
     "jobTitle": "Senior Software Engineer",
     "text": "Having worked closely with Imran, I can confidently endorse him as a highly skilled programmer proficient in Python, Java, JavaScript, and PHP with respective frameworks. Despite my seniority, I've always admired Imran's willingness to take on challenges head-on and his unwavering commitment to learning. His adaptability and enthusiasm for exploring new technologies make him an invaluable asset to any team. Together, we've collaborated on several projects where Imran's deep understanding of the product life cycle was evident. His attention to detail and problem-solving abilities are highly commendable. Moreover, Imran is a pleasure to work with – respectful, receptive to feedback, and always eager to offer assistance. I wholeheartedly recommend Imran for any position where a blend of technical expertise, curiosity, and teamwork is essential.",
-    "date": "2024-04-26T08:33:00.000Z",
+    "creationDate": "2024-04-26T14:33:00.000+06:00",
     "status": "VISIBLE"
   },
   {
-    "name": "Farhad Ahmad",
+    "firstName": "Farhad",
+    "lastName": "Ahmad",
     "company": "Penta Global Ltd.",
     "jobTitle": "Sr. Software Engineer ",
     "text": "Imran is the best resource in my team. He is very responsible, smart and a person anyone can rely on him. He is equally good at both frontend and backend and extremely good at javascript. Imran is a self-motivated hardworking individual and pleasant to work with. He encourages his teammates with his great attitude. This guy has the ability to go deeper of any tech stack and can bring the valuable insight very quickly. He is very keen to learn, can work under pressure and a deadline chaser. He always holds a positive mindset and has leadership attitude. I believe he shall be the next leader In Sha Allah.",
-    "date": "2023-04-02T21:54:00.000Z",
+    "creationDate": "2023-04-03T03:54:00.000+06:00",
     "status": "VISIBLE"
   }
 ]
