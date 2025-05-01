@@ -2,12 +2,12 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ThemeToggle } from '../ThemeToggle'
 import { useUser } from '@/context/userContext'
-import { LogOutIcon } from 'lucide-react'
-import { VscLoading } from 'react-icons/vsc'
+import { LogOutIcon, User2Icon } from 'lucide-react'
+
 
 
 const links = [
-  { href: '/about', label: 'About'},
+  { href: '/dashboard/about', label: 'About' },
   { href: '/dashboard/skill', label: 'Skills' },
   { href: '/dashboard/experience', label: 'Experience' },
   { href: '/dashboard/education', label: 'Education' },
@@ -19,10 +19,10 @@ const links = [
 ]
 
 export default function Sidebar() {
-  const {loading, logout} = useUser()
-  
+  const { loading, logout } = useUser()
+
   const pathname = usePathname()
-  const handleLogout=()=>{
+  const handleLogout = () => {
     logout()
   }
   return (
@@ -32,23 +32,28 @@ export default function Sidebar() {
           <Link
             key={link.href}
             href={link.href}
-            className={`px-3 py-2 rounded hover:bg-gray-200 dark:text-gray-100 dark:hover:bg-gray-700 ${
-              pathname === link.href ? 'bg-gray-200 dark:bg-gray-700 font-semibold' : ''
-            }`}
-            style={{textDecoration: "none"}}
+            className={`px-3 py-2 rounded hover:bg-gray-200 dark:text-gray-100 dark:hover:bg-gray-700 ${pathname === link.href ? 'bg-gray-200 dark:bg-gray-700 font-semibold' : ''
+              }`}
+            style={{ textDecoration: "none" }}
           >
             {link.label}
           </Link>
         ))}
       </nav>
       <div className='flex gap-2 mx-auto'>
+        <Link
+          href="/dashboard/profile"
+          className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-white hover:cursor-pointer"
+        >
+          <User2Icon/>
+        </Link>
         <ThemeToggle />
-        <button 
-          onClick={handleLogout} 
+        <button
+          onClick={handleLogout}
           className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-100 dark:bg-white hover:cursor-pointer"
           title='Logout'>
-          {loading ? "Loading...": <LogOutIcon className='dark:bg-gray-100 w-5 h-5'/>}
-          
+          {loading ? "Loading..." : <LogOutIcon className='dark:bg-gray-100 w-5 h-5' />}
+
         </button>
       </div>
     </aside>
