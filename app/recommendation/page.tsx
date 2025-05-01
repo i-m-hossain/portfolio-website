@@ -25,7 +25,6 @@ export default async function RecommendationPage() {
   return (
     <Layout>
       <RecommendationSection recommendations={recommendations} />
-
     </Layout>
   )
 }
