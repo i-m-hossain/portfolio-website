@@ -12,7 +12,7 @@ const links = [
   { href: '/dashboard/experience', label: 'Experience' },
   { href: '/dashboard/education', label: 'Education' },
   { href: '/dashboard/certification', label: 'Certification' },
-  { href: '/dashboard/blog', label: 'Blog' },
+  { href: '/dashboard/blogs', label: 'Blogs' },
   { href: '/dashboard/recommendation', label: 'Recommendation' },
   { href: '/dashboard/contact', label: 'Contact' },
   { href: '/dashboard/user', label: 'User' }

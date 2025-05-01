@@ -1,4 +1,4 @@
-export interface Summary{
+export interface Summary {
     summary: string
 }
 export interface Blog {
@@ -48,7 +48,7 @@ export interface SkillDataFromNotion {
 }
 
 
-export interface ExperienceData  {
+export interface ExperienceData {
     title: string;
     company: string;
     location: string;
@@ -57,14 +57,14 @@ export interface ExperienceData  {
     stack: string;
 };
 
-export interface Reference{
+export interface Reference {
     name: string,
     title: string,
     email: string,
     phone: string,
 }
 
-export interface PersonalInfo{
+export interface PersonalInfo {
     name: string,
     title: string,
     phone: string,
@@ -72,3 +72,5 @@ export interface PersonalInfo{
     github: string,
     linkedin: string
 }
+
+export type NotionEntity = 'about' | 'blog' | 'certification' | 'contact' | 'education' | 'experience' | 'profile' | 'recommendation' | 'skill'

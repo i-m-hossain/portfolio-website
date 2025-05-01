@@ -12,7 +12,7 @@ const links = [
   { title: "Experience", url: "/#experience" },
   { title: "Education", url: "/#education" },
   { title: "Certification", url: "/#certification" },
-  { title: "Blog", url: "/blog" },
+  { title: "Blogs", url: "/blogs" },
   { title: "Recommendation", url: "/recommendation" },
   { title: "Contact", url: "/contact" },
 ]
