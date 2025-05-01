@@ -1,36 +1,72 @@
-// components/Header.tsx
 'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ThemeToggle } from '@/components/ThemeToggle'
 import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 
-const links=[
-  {title: "About", url: "/#about"},
-  {title: "Skills", url: "/#skills"},
-  {title: "Experience", url: "/#experience"},
-  {title: "Education", url: "/#education"},
-  {title: "Certification", url: "/#certification"},
-  {title: "Blog", url: "/blog"},
-  {title: "Recommendation", url: "/recommendation"},
-  {title: "Contact", url: "/contact"},
+const links = [
+  { title: "About", url: "/#about" },
+  { title: "Skills", url: "/#skills" },
+  { title: "Experience", url: "/#experience" },
+  { title: "Education", url: "/#education" },
+  { title: "Certification", url: "/#certification" },
+  { title: "Blog", url: "/blog" },
+  { title: "Recommendation", url: "/recommendation" },
+  { title: "Contact", url: "/contact" },
 ]
 
 export default function Header() {
   const logo = "Md Imran Hossain"
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [fullPath, setFullPath] = useState('');
+  const pathname = usePathname();
+  const [activeItem, setActiveItem] = useState('/');
+  
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const pathWithHash = window.location.pathname + window.location.hash;
-      setFullPath(pathWithHash);
-    }
-  }, []);
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      const fullPath = hash ? `/${hash}` : '/';
+      
+      // Check if we're on the home page and the hash matches a link
+      if (pathname === '/' && hash) {
+        const matchingItem = links.find(item => item.url === fullPath);
+        if (matchingItem) {
+          setActiveItem(fullPath);
+          return;
+        }
+      }
+      
+      // For non-hash paths
+      setActiveItem(pathname);
+    };
+
+    // Set initial active item
+    handleHashChange();
+    
+    // Listen to hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    
+    // This is a workaround since Next.js doesn't expose route change events directly
+    // We'll use an interval to check for changes (not ideal but works)
+    const intervalId = setInterval(() => {
+      if (window.location.hash !== activeItem.replace('/', '#') && 
+          pathname === '/' &&   
+          window.location.hash) {
+        handleHashChange();
+      }
+    }, 100);
+    
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      clearInterval(intervalId);
+    };
+  }, [pathname, activeItem]);
+
   return (
     <header className="sticky top-0 z-10 bg-white shadow-md dark:shadow-[0_1px_1px_-1px_rgba(255,255,255,0.8)] transition-colors duration-300 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto p-4 md:p-6 flex items-center justify-between">
@@ -50,12 +86,16 @@ export default function Header() {
           className="hidden md:flex space-x-6"
         >
           {
-            links.map(link=>
-              <Link 
-                key={link.url} 
-                href={link.url} 
-                className={`${fullPath === link.url ? 'border-b dark:border-white border-gray-900 font-bold': ''} text-gray-600 hover:text-blue-600 dark:text-gray-100`}
-              >
+            links.map(link =>
+              <Link
+                key={link.url}
+                href={link.url}
+                className={`${activeItem === link.url 
+                  ? 'border-b dark:border-white border-gray-900 font-bold' 
+                  : 'border-b-0 border-transparent  hover:border-transparent'} 
+                  text-gray-600 hover:text-blue-600 dark:text-gray-100`}
+                style={{textDecoration:"none"}}
+                >
                 {link.title}
               </Link>
             )
@@ -64,9 +104,9 @@ export default function Header() {
 
         <div className="flex items-center space-x-4">
           <ThemeToggle />
-          
+
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="md:hidden flex items-center text-gray-700 dark:text-gray-200"
             onClick={toggleMenu}
             aria-label="Toggle menu"
@@ -109,12 +149,13 @@ export default function Header() {
         >
           <div className="flex flex-col px-4 pt-2 pb-4 space-y-3">
             {
-              links.map(link=>(
-                <Link 
+              links.map(link => (
+                <Link
                   key={link.url}
-                  href={link.url} 
-                  className={`${fullPath === link.url ? 'border-b dar:border-white border-dark font-bold': ''} text-gray-900 dark:text-white hover:text-blue-600  py-2 border-b border-gray-100 dark:border-gray-700`}
+                  href={link.url}
+                  className={`${activeItem === link.url ? 'border-b dark:border-white border-gray-900 font-bold' : ''} text-gray-900 dark:text-white hover:text-blue-600 py-2 border-b border-gray-100 dark:border-gray-700`}
                   onClick={() => setIsMenuOpen(false)}
+                  style={{textDecoration:"none"}}
                 >
                   {link.title}
                 </Link>
