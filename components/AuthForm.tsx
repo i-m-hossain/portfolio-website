@@ -93,7 +93,7 @@ export default function AuthForm({ type, onSubmit }: AuthFormProps) {
                 </button>
             </form>
 
-            <p className="text-center text-gray-600 dark:text-gray-300 mt-4">
+            {/* <p className="text-center text-gray-600 dark:text-gray-300 mt-4">
                 {type === 'login' ? (
                     <>
                         Don't have an account? <a href="/register" className="text-blue-500">Register</a>
@@ -103,7 +103,7 @@ export default function AuthForm({ type, onSubmit }: AuthFormProps) {
                         Already have an account? <a href="/login" className="text-blue-500">Login</a>
                     </>
                 )}
-            </p>
+            </p> */}
         </motion.div>
     )
 }
