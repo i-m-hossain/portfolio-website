@@ -8,14 +8,14 @@ import { LogOutIcon, User2Icon } from 'lucide-react'
 
 const links = [
   { href: '/dashboard/about', label: 'About' },
-  { href: '/dashboard/skill', label: 'Skills' },
-  { href: '/dashboard/experience', label: 'Experience' },
+  { href: '/dashboard/skills', label: 'Skills' },
+  { href: '/dashboard/experiences', label: 'Experiences' },
   { href: '/dashboard/education', label: 'Education' },
-  { href: '/dashboard/certification', label: 'Certification' },
+  { href: '/dashboard/certifications', label: 'Certifications' },
   { href: '/dashboard/blogs', label: 'Blogs' },
-  { href: '/dashboard/recommendation', label: 'Recommendation' },
+  { href: '/dashboard/recommendations', label: 'Recommendations' },
   { href: '/dashboard/contact', label: 'Contact' },
-  { href: '/dashboard/user', label: 'User' }
+  { href: '/dashboard/users', label: 'Users' }
 ]
 
 export default function Sidebar() {

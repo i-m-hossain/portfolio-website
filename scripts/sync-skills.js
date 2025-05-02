@@ -16,12 +16,12 @@ function convertCsvToJson() {
             try {
 
                 results.push({
-                    "backendApiDevelopment":data['Backend & API Development'],
-                    "frontendDevelopment":data['Frontend Development'],
-                    "devOpsSystemAdministration":data['DevOps & System Administration'],
-                    "database":data['Data Engineering & Automation'],
-                    "dataEngineeringAutomation":data['Database'],
-                    "otherTools":data['Other Tools'],
+                    "backend":data['backend'],
+                    "frontend":data['frontend'],
+                    "devops":data['devops'],
+                    "database":data['database'],
+                    "dataEngineering":data['Database'],
+                    "otherTools":data['otherTools'],
                 });
             } catch (error) {
                 console.error('Error parsing row:', data, error.message);

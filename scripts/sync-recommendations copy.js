@@ -14,19 +14,19 @@ function convertCsvToJson() {
         }))
         .on('data', (data) => {
             
-            const rawDate = data['Creation Date'];
+            const rawDate = data['creationDate'];
             const formatted = convertToISOWithOffset(rawDate);
             
             try {
 
                 results.push({
-                    firstName: data['First Name'],
-                    lastName: data['Last Name'],
-                    company: data.Company,
-                    jobTitle: data['Job Title'],
-                    text: data.Text.trim(),
+                    firstName: data['firstName'],
+                    lastName: data['lastName'],
+                    company: data.company,
+                    jobTitle: data['jobTitle'],
+                    text: data.text.trim(),
                     creationDate: formatted,
-                    status: data.Status,
+                    status: data.status,
                 });
             } catch (error) {
                 console.error('Error parsing row:', data, error.message);
