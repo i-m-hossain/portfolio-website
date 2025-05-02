@@ -3,20 +3,21 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { FaSpinner } from "react-icons/fa";
 
 type Props = {
     blogId: string,
     styles?: string
 }
-const defaultStyles="text-red-600 hover:text-red-900 cursor-pointer hover:underline"
+const defaultStyles = "text-red-600 hover:text-red-900 cursor-pointer hover:underline"
 export default function RemoveBlog({ blogId, styles }: Props) {
     const [isDeleting, setIsDeleting] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const router = useRouter();
 
-    const handleClick = async(blogId: string) => {
+    const handleClick = async (blogId: string) => {
         const confirmed = window.confirm("Are you sure want to delete?")
-        if(!confirmed){
+        if (!confirmed) {
             return
         }
         setIsDeleting(true);
@@ -31,7 +32,7 @@ export default function RemoveBlog({ blogId, styles }: Props) {
                 const errorData = await response.json();
                 throw new Error(errorData.error || 'Failed to delete blog post');
             }
-            toast("Deleted successfully!")
+            toast.success("Blog deleted successfully!")
             router.push("/dashboard/blogs")
             router.refresh(); // Refresh the page to show the updated data
         } catch (err) {
@@ -45,7 +46,8 @@ export default function RemoveBlog({ blogId, styles }: Props) {
             onClick={() => handleClick(blogId)}
             className={styles ? styles : defaultStyles}
         >
-            {isDeleting? "Deleting ....":"Delete"}
+            {isDeleting ? <FaSpinner className="animate-spin text-2xl text-gray-100" /> : "Delete"}
         </button>
+
     )
 }

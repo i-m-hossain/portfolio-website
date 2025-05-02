@@ -2,20 +2,16 @@
 'use client';
 
 import { useState, useEffect, use } from 'react';
-import { useRouter } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { BlogPost } from '@/types/blogs';
 import Redirection from '@/components/Redirection';
+import toast from 'react-hot-toast';
+import { FaSpinner } from 'react-icons/fa';
 
-interface EditBlogProps {
-    params: {
-        id: string
-    };
-}
-
-export default function EditBlog({ params }: EditBlogProps) {
+export default function EditBlog() {
     const router = useRouter();
-    const { id } = params;
+    const { id } = useParams()
     const [isLoading, setIsLoading] = useState(true);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState<string | null>(null);
@@ -66,7 +62,7 @@ export default function EditBlog({ params }: EditBlogProps) {
         setError(null);
 
         try {
-            const response = await fetch(`/api/blogs/${params.id}`, {
+            const response = await fetch(`/api/blogs/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -78,7 +74,7 @@ export default function EditBlog({ params }: EditBlogProps) {
                 const errorData = await response.json();
                 throw new Error(errorData.error || 'Failed to update blog post');
             }
-
+            toast.success("Blog updated successfully!")
             router.push("/dashboard/blogs")
             router.refresh(); // Refresh the page to show the updated data
         } catch (err) {
@@ -168,7 +164,7 @@ export default function EditBlog({ params }: EditBlogProps) {
                             className={`bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-colors ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
                                 }`}
                         >
-                            {isSubmitting ? 'Saving...' : 'Save Changes'}
+                            {isSubmitting ? <FaSpinner className="animate-spin text-2xl text-gray-100" /> : 'Save Changes'}
                         </button>
                         <Link
                             href="/blogs"

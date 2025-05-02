@@ -6,6 +6,8 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowBigLeft, ArrowLeftIcon } from 'lucide-react';
 import Redirection from '@/components/Redirection';
+import toast from 'react-hot-toast';
+import { FaSpinner } from 'react-icons/fa';
 
 export default function CreateBlog() {
   const router = useRouter();
@@ -43,6 +45,7 @@ export default function CreateBlog() {
       }
 
       router.push('/dashboard/blogs')
+      toast.success("Blog added successfully!")
       router.refresh(); // Refresh the page to show the updated data
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unexpected error occurred');
@@ -125,7 +128,7 @@ export default function CreateBlog() {
                 isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
               }`}
             >
-              {isSubmitting ? 'Adding...' : 'Add Blog'}
+              {isSubmitting ? <FaSpinner className="animate-spin text-2xl text-gray-100" /> : 'Add Blog'}
             </button>
             <Link
               href="/blogs"

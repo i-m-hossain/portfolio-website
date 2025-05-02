@@ -5,14 +5,13 @@ import { getBlogById } from '@/services/blogService';
 import Redirection from '@/components/Redirection';
 import RemoveBlog from '@/components/RemoveBlog';
 
+export const revalidate = 86400
+type tParams = Promise<{ id: string }>;
+export default async function BlogDetail(
+    props: { params: tParams }
 
-
-export default async function BlogDetail({
-    params,
-  }: {
-    params: { id: string };
-  }) {
-    const { id } = params;
+) {
+    const { id } = await props.params;
     const blog = await getBlogById(id);
 
     if (!blog) {
@@ -67,7 +66,7 @@ export default async function BlogDetail({
                                 Edit
                             </Link>
 
-                            <RemoveBlog blogId={blog.id} styles='bg-red-700 hover:bg-red-700 text-white py-2 px-4 rounded transition-colors cursor-pointer'/>
+                            <RemoveBlog blogId={blog.id} styles='bg-red-700 hover:bg-red-700 text-white py-2 px-4 rounded transition-colors cursor-pointer' />
                         </div>
                     </div>
                 </div>

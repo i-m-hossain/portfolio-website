@@ -2,12 +2,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getBlogById, updateBlog, deleteBlog } from '@/services/blogService';
 
+type tParams = Promise<{ id: string }>;
+
 export async function GET(
   request: NextRequest,
-  context: { params: { id: string } }
-) {
-  const { params } = context;
-  const id = params.id;
+  props: { params: tParams }
+): Promise<NextResponse> {
+  const { id } = await props.params;
   try {
     const blog = await getBlogById(id);
     
@@ -30,9 +31,9 @@ export async function GET(
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  props: { params: tParams }
 ) {
-  const id = params.id;
+  const {id} = await props.params;
   try {
     const body = await request.json();
     
@@ -65,9 +66,9 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  props: { params: tParams }
 ) {
-  const id = params.id;
+  const {id} = await props.params;
   try {
     const existingBlog = await getBlogById(id);
     if (!existingBlog) {
