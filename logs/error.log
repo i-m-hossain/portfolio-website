@@ -1072,3 +1072,75 @@ FetchError: request to https://api.notion.com/v1/databases/1e1ce875399e80428b64e
     at emitErrorCloseNT (node:internal/streams/destroy:128:3)
     at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
 
+[2025-05-02T14:11:28.948Z] [fetchFromNotion] ERROR: request to https://api.notion.com/v1/databases/1e1ce875399e8066880dc52ba142507f/query failed, reason: 
+FetchError: request to https://api.notion.com/v1/databases/1e1ce875399e8066880dc52ba142507f/query failed, reason: 
+    at ClientRequest.<anonymous> (/home/imran/dev_imran/portfolio-website/.next/server/chunks/ssr/node_modules_ce717917._.js:3803:20)
+    at ClientRequest.emit (node:events:519:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at runNextTicks (node:internal/process/task_queues:64:3)
+    at listOnTimeout (node:internal/timers:540:9)
+    at process.processTimers (node:internal/timers:514:7)
+
+[2025-05-02T14:11:29.215Z] [fetchFromNotion] ERROR: request to https://api.notion.com/v1/databases/1e1ce875399e8066880dc52ba142507f/query failed, reason: 
+FetchError: request to https://api.notion.com/v1/databases/1e1ce875399e8066880dc52ba142507f/query failed, reason: 
+    at ClientRequest.<anonymous> (/home/imran/dev_imran/portfolio-website/.next/server/chunks/ssr/node_modules_0cddb54e._.js:3827:20)
+    at ClientRequest.emit (node:events:519:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+[2025-05-02T14:12:33.266Z] [fetchFromNotion] ERROR: request to https://api.notion.com/v1/databases/1e1ce875399e8066880dc52ba142507f/query failed, reason: 
+FetchError: request to https://api.notion.com/v1/databases/1e1ce875399e8066880dc52ba142507f/query failed, reason: 
+    at ClientRequest.<anonymous> (/home/imran/dev_imran/portfolio-website/.next/server/chunks/ssr/node_modules_0cddb54e._.js:3827:20)
+    at ClientRequest.emit (node:events:519:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+[2025-05-02T14:56:52.420Z] [getRecordById] ERROR: path failed validation: path.page_id should be a valid uuid, instead was `"edit"`.
+APIResponseError: path failed validation: path.page_id should be a valid uuid, instead was `"edit"`.
+    at buildRequestError (/home/imran/dev_imran/portfolio-website/.next/server/chunks/ssr/node_modules_fb1f1e80._.js:1759:16)
+    at Client.request (/home/imran/dev_imran/portfolio-website/.next/server/chunks/ssr/node_modules_fb1f1e80._.js:5950:54)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getRecordById (/home/imran/dev_imran/portfolio-website/.next/server/chunks/ssr/[root-of-the-server]__b16e8664._.js:425:21)
+    at async getRecommendationById (/home/imran/dev_imran/portfolio-website/.next/server/chunks/ssr/[root-of-the-server]__b16e8664._.js:518:12)
+    at async RecommendationDetail (/home/imran/dev_imran/portfolio-website/.next/server/chunks/ssr/[root-of-the-server]__b16e8664._.js:641:28)
+
+[2025-05-02T15:00:58.558Z] [getRecordById] ERROR: request to https://api.notion.com/v1/pages/1e1ce875-399e-817c-915a-dd1b2bd2b1ad failed, reason: 
+FetchError: request to https://api.notion.com/v1/pages/1e1ce875-399e-817c-915a-dd1b2bd2b1ad failed, reason: 
+    at ClientRequest.<anonymous> (/home/imran/dev_imran/portfolio-website/.next/server/chunks/node_modules_b038017c._.js:15376:20)
+    at ClientRequest.emit (node:events:519:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+[2025-05-02T15:13:33.568Z] [getRecordById] ERROR: request to https://api.notion.com/v1/pages/1e1ce875-399e-817c-915a-dd1b2bd2b1ad failed, reason: 
+FetchError: request to https://api.notion.com/v1/pages/1e1ce875-399e-817c-915a-dd1b2bd2b1ad failed, reason: 
+    at ClientRequest.<anonymous> (/home/imran/dev_imran/portfolio-website/.next/server/chunks/node_modules_b038017c._.js:15376:20)
+    at ClientRequest.emit (node:events:519:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+[2025-05-02T15:19:06.472Z] [fetchFromNotion] ERROR: request to https://api.notion.com/v1/databases/1e1ce875399e8066880dc52ba142507f/query failed, reason: 
+FetchError: request to https://api.notion.com/v1/databases/1e1ce875399e8066880dc52ba142507f/query failed, reason: 
+    at ClientRequest.<anonymous> (/home/imran/dev_imran/portfolio-website/.next/server/chunks/ssr/node_modules_ce717917._.js:3803:20)
+    at ClientRequest.emit (node:events:519:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:519:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+

@@ -481,6 +481,7 @@ export async function fetchAndProcessNotion<T>(
   filter?: any,
   sorts?: any[],
 ): Promise<T[]> {
+
   const notionData  = await fetchFromNotion(notionClient, databaseId, filter, sorts);
   // If we got data from Notion, process it
   if (notionData && notionData.length > 0) {

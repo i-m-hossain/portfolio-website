@@ -1,8 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { SkillData } from '@/types/notion'
+
 import { skillDisplayNames } from '@/config/keyMapping'
+import { SkillData } from '@/types/skills'
 
 const containerVariants = {
   hidden: { opacity: 0, y: 10 },
@@ -22,7 +23,20 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 }
 
-export default function Skills({ skillData }: { skillData: SkillData }) {
+const parseSkillData = (data: string) => {
+  if (data.trim()) {
+    try {
+      return JSON.parse(data);
+
+    } catch (error) {
+      return []
+    }
+  }
+
+}
+export default function Skills({ skills }: { skills: SkillData[] }) {
+
+
   return (
     <section
       className="bg-white py-8 dark:bg-gray-900 dark:text-gray-100 shadow-md dark:shadow-[0_4px_6px_1px_rgba(255,255,255,0.8)] transition-colors duration-300"
@@ -50,15 +64,13 @@ export default function Skills({ skillData }: { skillData: SkillData }) {
           viewport={{ once: true }}
           variants={containerVariants}
         >
-          {Object.entries(skillData as SkillData).map(([category, skills], i) => {
-            const typedCategory = category as keyof SkillData;
-            if (!skills || skills.length === 0) return null;
+          {skills.map((item, i) => {
             return (<motion.div key={i} variants={itemVariants}>
               <div className="p-4 border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                <h3 className="font-semibold text-lg mb-2">{skillDisplayNames[typedCategory]}</h3>
+                <h3 className="font-semibold text-lg mb-2">{item.category}</h3>
                 {skills.length > 0 ? (
                   <ul className="list-disc pl-5 space-y-1">
-                    {skills.map((skill: string) => (
+                    {parseSkillData(item.skills).map((skill: string) => (
                       <li
                         key={skill}
                         className="text-gray-600 dark:text-gray-100"
