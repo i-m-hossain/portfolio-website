@@ -1,8 +1,7 @@
-﻿Backend & API Development,Frontend Development,Database,DevOps & System Administration,Data Engineering & Automation,Other Tools
-PHP (Laravel),"JavaScript (React, Next.js, Svelte)",MySQL,Docker,Scripting with Python for large datasets,Git
-Node.js (Express),,MongoDB,Docker Compose,,Gitlab
-,,,Nginx,,Redis
-,,,Bash scripting,,Redis-sentinel
-,,,,,Jenkins
-,,,,,CI/CD
-,,,,,Jira
+﻿category,skills
+backend,"[""PHP(Laravel)"", ""Node.js (Express)""]"
+frontend,"[""React"", ""Next.js"", ""Svelte""]"
+devops,"[""Docker"", ""Docker Compose"", ""Nginx"", ""Bash scripting""]"
+dataEngineering,"[""Scripting with Python for large datasets""]"
+otherTools," [""Git, Redis"", ""Redis sentinel"", ""Jenkins"", ""CI/CD"", ""Jira""]"
+database,"[""MySQL"", ""MongoDB""]"

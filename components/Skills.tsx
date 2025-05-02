@@ -67,7 +67,7 @@ export default function Skills({ skills }: { skills: SkillData[] }) {
           {skills.map((item, i) => {
             return (<motion.div key={i} variants={itemVariants}>
               <div className="p-4 border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                <h3 className="font-semibold text-lg mb-2">{item.category}</h3>
+                <h3 className="font-semibold text-lg mb-2">{skillDisplayNames[item.category]}</h3>
                 {skills.length > 0 ? (
                   <ul className="list-disc pl-5 space-y-1">
                     {parseSkillData(item.skills).map((skill: string) => (

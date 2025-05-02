@@ -16,12 +16,8 @@ function convertCsvToJson() {
             try {
 
                 results.push({
-                    "backend":data['backend'],
-                    "frontend":data['frontend'],
-                    "devops":data['devops'],
-                    "database":data['database'],
-                    "dataEngineering":data['Database'],
-                    "otherTools":data['otherTools'],
+                    category: data.category,
+                    skills: data.skills
                 });
             } catch (error) {
                 console.error('Error parsing row:', data, error.message);

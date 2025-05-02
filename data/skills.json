@@ -1,58 +1,26 @@
 [
   {
-    "backendApiDevelopment": "PHP (Laravel)",
-    "frontendDevelopment": "JavaScript (React, Next.js, Svelte)",
-    "devOpsSystemAdministration": "Docker",
-    "database": "Scripting with Python for large datasets",
-    "dataEngineeringAutomation": "MySQL",
-    "otherTools": "Git"
+    "category": "backend",
+    "skills": "[\"PHP(Laravel)\", \"Node.js (Express)\"]"
   },
   {
-    "backendApiDevelopment": "Node.js (Express)",
-    "frontendDevelopment": "",
-    "devOpsSystemAdministration": "Docker Compose",
-    "database": "",
-    "dataEngineeringAutomation": "MongoDB",
-    "otherTools": "Gitlab"
+    "category": "frontend",
+    "skills": "[\"React\", \"Next.js\", \"Svelte\"]"
   },
   {
-    "backendApiDevelopment": "",
-    "frontendDevelopment": "",
-    "devOpsSystemAdministration": "Nginx",
-    "database": "",
-    "dataEngineeringAutomation": "",
-    "otherTools": "Redis"
+    "category": "devops",
+    "skills": "[\"Docker\", \"Docker Compose\", \"Nginx\", \"Bash scripting\"]"
   },
   {
-    "backendApiDevelopment": "",
-    "frontendDevelopment": "",
-    "devOpsSystemAdministration": "Bash scripting",
-    "database": "",
-    "dataEngineeringAutomation": "",
-    "otherTools": "Redis-sentinel"
+    "category": "dataEngineering",
+    "skills": "[\"Scripting with Python for large datasets\"]"
   },
   {
-    "backendApiDevelopment": "",
-    "frontendDevelopment": "",
-    "devOpsSystemAdministration": "",
-    "database": "",
-    "dataEngineeringAutomation": "",
-    "otherTools": "Jenkins"
+    "category": "otherTools",
+    "skills": " [\"Git, Redis\", \"Redis sentinel\", \"Jenkins\", \"CI/CD\", \"Jira\"]"
   },
   {
-    "backendApiDevelopment": "",
-    "frontendDevelopment": "",
-    "devOpsSystemAdministration": "",
-    "database": "",
-    "dataEngineeringAutomation": "",
-    "otherTools": "CI/CD"
-  },
-  {
-    "backendApiDevelopment": "",
-    "frontendDevelopment": "",
-    "devOpsSystemAdministration": "",
-    "database": "",
-    "dataEngineeringAutomation": "",
-    "otherTools": "Jira"
+    "category": "database",
+    "skills": "[\"MySQL\", \"MongoDB\"]"
   }
 ]

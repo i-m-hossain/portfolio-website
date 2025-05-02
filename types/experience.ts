@@ -12,7 +12,7 @@ export interface ExperienceData {
     stack: string;
 };
 
-export const blogPropertyMappings = {
+export const experiencePropertyMappings = {
     "title": "title",
     "company": "company",
     "duration": "duration",
@@ -21,7 +21,7 @@ export const blogPropertyMappings = {
     "stack": "stack"
 };
 
-export const blogPropertyTypes: Record<string, NotionPropertyTypes> = {
+export const experiencePropertyTypes: Record<string, NotionPropertyTypes> = {
     title: "title",
     company: "rich_text",
     location: "select",
