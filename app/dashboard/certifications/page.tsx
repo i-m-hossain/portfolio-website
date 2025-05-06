@@ -1,6 +1,6 @@
 // src/app/certifications/page.tsx
 import Link from 'next/link';
-import { getAllCertifications, deleteCertification } from '@/services/certificationService';
+import { getAllCertifications } from '@/services/certificationService';
 import RemoveItem from '@/components/RemoveItem';
 
 
