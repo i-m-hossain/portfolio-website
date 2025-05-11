@@ -12,6 +12,7 @@ const jsonFileName = process.env.LOCAL_EXPERIENCES_DATA_JSON_FILE_NAME!
 
 export default async function ExperienceSection() {
   const dataMapping = {
+    "order": "order",
     "title": "title",
     "company": "company",
     "duration": "duration",
@@ -19,8 +20,14 @@ export default async function ExperienceSection() {
     "description": "description",
     "stack": "stack"
   }
+  const sorts = [
+    {
+        property: dataMapping?.order,
+        direction: "descending"
+    }
+];
   const notionClient = createNotionClient(apiKey);
-  const experiences = await fetchAndProcessNotion<ExperienceData>(notionClient, databaseId, dataMapping, jsonFileName);
+  const experiences = await fetchAndProcessNotion<ExperienceData>(notionClient, databaseId, dataMapping, jsonFileName, undefined, sorts);
   return (
     <Experience experiences={experiences} />
   )

@@ -13,6 +13,7 @@ export interface RecommendationData {
     text: string
 }
 export const recommendationPropertyMappings = {
+    order: "order",
     firstName: 'firstName',
     lastName: 'lastName',
     jobTitle: 'jobTitle',

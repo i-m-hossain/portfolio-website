@@ -10,14 +10,21 @@ const jsonFileName = process.env.LOCAL_CERTIFICATIONS_DATA_JSON_FILE_NAME!
 
 export default async function CertificationsSection() {
   const dataMapping = {
+      order: "order",
       certificationName: "certificationName",
       certificationLink: "certificationLink",
       issued: "issued",
       credentialId: "credentialId",
       issuedBy: "issuedBy"
     }
+    const sorts = [
+      {
+          property: dataMapping?.order,
+          direction: "descending"
+      }
+  ];
     const notionClient = createNotionClient(apiKey);
-    const certifications = await fetchAndProcessNotion<Certification>(notionClient, databaseId, dataMapping, jsonFileName);
+    const certifications = await fetchAndProcessNotion<Certification>(notionClient, databaseId, dataMapping, jsonFileName, undefined, sorts);
   return (
     <Certifications certifications={certifications}/>
   )
