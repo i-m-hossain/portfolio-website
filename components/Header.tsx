@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 
 const links = [
-  { title: "About", url: "/#about" },
+  // { title: "About", url: "/#about" },
   { title: "Skills", url: "/#skills" },
   { title: "Experience", url: "/#experience" },
   { title: "Education", url: "/#education" },
@@ -15,6 +15,7 @@ const links = [
   { title: "Blogs", url: "/blogs" },
   { title: "Recommendation", url: "/recommendation" },
   { title: "Contact", url: "/contact" },
+  { title: "Resume", url: "/resume" },
 ]
 
 export default function Header() {
