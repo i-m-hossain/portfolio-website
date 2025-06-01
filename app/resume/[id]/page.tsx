@@ -1,12 +1,15 @@
-// app/pdfs/[id]/page.tsx
 import Layout from '@/components/Layout';
 import { getPdfById } from '@/services/resumeService';
 import Link from 'next/link';
+interface PdfDetailPageProps {
+    params: Promise<{ id: string }>;
+    searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+}
 
-export default async function PdfDetailPage({ params }) {
+export default async function PdfDetailPage({ params }: PdfDetailPageProps) {
     try {
-        const pdf = await getPdfById(params.id);
-
+        const { id } = await params;
+        const pdf = await getPdfById(id);
         return (
             <Layout>
                 <div className="container mx-auto py-8 px-4">

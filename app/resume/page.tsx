@@ -1,15 +1,16 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, JSX } from 'react';
 import Link from 'next/link';
 import Layout from '@/components/Layout';
 import ShimmerUI from '@/components/ShimmerUI';
 import ErrorMessage from '@/components/ErrorMessage';
+import { PdfItem } from '@/types/resume';
 
-export default function PdfList() {
-    const [pdfs, setPdfs] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');
+export default function PdfList():JSX.Element  {
+    const [pdfs, setPdfs] = useState<PdfItem[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string>('');
 
     useEffect(() => {
         async function fetchResumes() {
